@@ -1,0 +1,3 @@
+provider: generic
+url: https://gitee.com/YeeanXu/Notice
+updaterCacheDirName: notice-updater

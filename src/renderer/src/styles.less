@@ -1,0 +1,147 @@
+::-webkit-scrollbar {
+  display: none;
+}
+:root {
+  --icon: url(./assets/icon.png);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --Deep: #120e10; //古鼎
+    --Shallow: #1e201e;
+    --theme: #6ca984; //箬竹
+    --Virtual: #7a7b78;
+    --Real: #ecedf2;
+    --Inverse: #db5a6b;
+  }
+  ::selection {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --Deep: #ecedf2; //浅云
+    --Shallow: #f5f3f3;
+    --theme: #db5a6b; //海棠红
+    --Virtual: #bbb;
+    --Real: #120e10;
+    --Inverse: #6ca984;
+  }
+  ::selection {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+* {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-user-drag: none;
+  user-select: none;
+  transition: background-color 0.8s ease, background 0.8s ease, border 0.8s ease,
+    background-image 0.8s ease;
+}
+
+a,
+input {
+  letter-spacing: 4px;
+  color: var(--Real);
+  cursor: default;
+  text-decoration: none;
+  outline: none;
+  font-size: 1.12rem;
+  -webkit-app-region: no-drag;
+  margin: 0 8px;
+}
+input[type='checkbox'] {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--Virtual);
+  border-radius: 2px;
+  background: var(--Shallow);
+  outline: none;
+}
+input[type='checkbox']:checked {
+  background: var(--theme);
+  border: 1px solid var(--theme);
+}
+@keyframes overflow {
+  0% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: inherit;
+  }
+}
+@keyframes pop {
+  0%,
+  100% {
+    transform: translateY(-54px) scaleX(0.04);
+  }
+  12.5%,
+  87.5% {
+    transform: translateY(54px) scaleX(1);
+  }
+}
+
+@keyframes spin78236 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wobble1 {
+  0%,
+  100% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-66%) scale(0.65);
+    opacity: 0.8;
+  }
+}
+
+@keyframes wobble2 {
+  0%,
+  100% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(66%) scale(0.65);
+    opacity: 0.8;
+  }
+}
+
+@keyframes mask {
+  0%,
+  100% {
+    width: 540px;
+    height: 540px;
+    transform: translate(84%, -84%) rotate(45deg);
+  }
+  50% {
+    width: 1620px;
+    height: 1620px;
+    transform: translate(-40%, 60%) rotate(45deg);
+    opacity: 0;
+  }
+  51% {
+    width: 540px;
+    height: 540px;
+    transform: translate(150%, 150%) rotate(45deg);
+  }
+  90% {
+    width: 540px;
+    height: 540px;
+    transform: translate(120%, -80%) rotate(45deg);
+  }
+}
